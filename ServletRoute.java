@@ -48,9 +48,9 @@ public class ServletRoute extends HttpServlet
       out = System.out;
       err = System.err;
       in = System.in;
-      ThreadInputStream.replaceSystemIn();
-      ThreadPrintStream.replaceSystemOut();
-      ThreadPrintStream.replaceSystemErr();
+      // ThreadInputStream.replaceSystemIn();
+      // ThreadPrintStream.replaceSystemOut();
+      // ThreadPrintStream.replaceSystemErr();
     }
 
     public void print(String s) {
