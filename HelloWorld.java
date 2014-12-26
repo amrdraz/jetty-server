@@ -43,11 +43,11 @@ public class HelloWorld
         context.setContextPath("/");
         context.addServlet(new ServletHolder(new ServletRoute()),"/*");
         System.out.println("context");
-        server.setHandler(context);
+        // server.setHandler(context);
        System.out.println("set handler");
         server.start();
               System.out.println("start");
-        server.join();
+        // server.join();
               System.out.println("Running");
     }
 }
