@@ -39,7 +39,7 @@ public class HelloWorld
         }
         Server server = new Server(port);
         
-        ServletContextHandler context = new ServletContextHandler(server);
+        ServletContextHandler context = new ServletContextHandler();
         context.setContextPath("/");
         context.addServlet(new ServletHolder(new ServletRoute()),"/*");
         System.out.println("context");
