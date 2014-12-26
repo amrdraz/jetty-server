@@ -58,9 +58,13 @@ public class HelloWorld extends AbstractHandler
         
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
+        context.addServlet(new ServletHolder(new ServletRoute()),"/*");
+        System.out.println("context");
         server.setHandler(context);
- 
+       System.out.println("set handler");
         server.start();
+              System.out.println("start");
         server.join();
+              System.out.println("Running");
     }
 }
