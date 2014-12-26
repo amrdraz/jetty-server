@@ -14,12 +14,6 @@ import java.util.Map;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.ByteArrayOutputStream;
-import java.net.URI;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.logging.Logger;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -34,19 +28,8 @@ import org.eclipse.jetty.util.ajax.JSON;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
-public class HelloWorld extends AbstractHandler
+public class HelloWorld
 {
-    public void handle(String target,
-                       Request baseRequest,
-                       HttpServletRequest request,
-                       HttpServletResponse response) 
-        throws IOException, ServletException
-    {
-        response.setContentType("text/html;charset=utf-8");
-        response.setStatus(HttpServletResponse.SC_OK);
-        baseRequest.setHandled(true);
-        response.getWriter().println("<h1>Hello World</h1>");
-    }
 
     public static void main(String[] args) throws Exception
     {
@@ -56,7 +39,7 @@ public class HelloWorld extends AbstractHandler
         }
         Server server = new Server(port);
         
-        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        ServletContextHandler context = new ServletContextHandler(server);
         context.setContextPath("/");
         context.addServlet(new ServletHolder(new ServletRoute()),"/*");
         System.out.println("context");
